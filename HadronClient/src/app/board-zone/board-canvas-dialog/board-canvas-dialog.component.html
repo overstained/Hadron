@@ -1,0 +1,9 @@
+<md-toolbar class="toolbar-size">
+	<input [(colorPicker)]="color" [style.background]="color" [value]="color"/>
+</md-toolbar>
+<div (window:keydown.delete)="clearCanvas()" 
+	 (window:keydown.control.z)="undo()"
+	 (window:keydown.escape)="closeCanvas()" >
+	<canvas #whiteBoard style="width:100%;height:80vh;"> Canvas not supported! </canvas>
+	<canvas #clipCanvas style="display:none;"></canvas>
+</div>

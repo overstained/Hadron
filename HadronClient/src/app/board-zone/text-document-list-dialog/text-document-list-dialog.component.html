@@ -1,0 +1,13 @@
+<div class="row align-items-center">	
+	<div class="col-5">
+	</div>
+	<div class="col-12 align-items-center">
+		<md-dialog-content class="limit-height">
+			<div class="list-group">
+			  <a *ngFor="let textDocument of textDocumentList; let i = index;" [attr.id]="'text_document_element_' + i" class="list-group-item" (click)="markOrChangeTextDocument($event, i, textDocument)">
+			  	<div class="col-5">{{textDocument.name}}</div>
+			  </a>
+			</div>
+		</md-dialog-content>
+	</div>
+</div>

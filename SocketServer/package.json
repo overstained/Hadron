@@ -1,0 +1,13 @@
+{
+  "name": "hadron-socket-server",
+  "version": "1.0.0",
+  "description": "NodeJS socket server for Hadron",
+  "scripts": {
+    "start": "node socket-server.js"
+  },
+  "main": "main.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

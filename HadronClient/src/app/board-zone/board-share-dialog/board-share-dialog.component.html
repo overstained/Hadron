@@ -1,0 +1,15 @@
+<div class="row align-items-center">	
+	<div class="col-5">
+	</div>
+	<div class="col-12 align-items-center">
+		<div class="form-group">
+			<input #emailInput (keydown.Enter)="shareBoard()" type="text" class="form-control" name="email" placeholder="Email">
+		</div>
+	</div>
+	<div>
+		Board members:
+			<div class="list-group">
+			  <span *ngFor="let member of memberList" class="list-group-item">{{member}}</span>
+			</div>
+	</div>
+</div>

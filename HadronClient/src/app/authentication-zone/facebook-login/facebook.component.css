@@ -1,0 +1,10 @@
+.facebook-button {
+	cursor: hand;
+	cursor: pointer;
+}
+
+.facebook-container {
+    border-radius: 25px;
+    background-color: rgba(192, 192, 192, 0.3);
+    height:20vh;
+}

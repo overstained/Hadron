@@ -1,0 +1,8 @@
+<md-grid-list cols="4" rowHeight="250px">
+  <md-grid-tile
+      *ngFor="let file of files"
+      [colspan]="1"
+      [rowspan]="1">
+    <img [src]="file.url" (click)="closeAndInsertIntoEditor(file.url)" style="cursor:pointer; cursor: hand;" border="3"/>
+  </md-grid-tile>
+</md-grid-list>

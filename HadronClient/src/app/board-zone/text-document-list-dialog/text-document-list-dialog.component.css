@@ -1,0 +1,8 @@
+.limit-height {
+	max-height:35vh;
+}
+
+.owner-email {
+	font-size: 10 px !important;
+	color: grey;
+}

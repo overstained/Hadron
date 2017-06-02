@@ -1,0 +1,15 @@
+<div class="row align-items-center">	
+	<div class="col-5">
+	</div>
+	<div class="col-12 align-items-center">
+		<md-dialog-content class="limit-height">
+			<div class="list-group">
+			  <a *ngFor="let board of boardList; let i = index;" [attr.id]="'board_element_' + i" class="list-group-item" (click)="markOrChangeBoard($event, i, board)">
+			  	<div class="col-5">{{board.name}}</div>
+			  	<div class="col-5 owner-email" style="">{{board.ownerEmail}}</div>
+			  	<div class="col-2 align-items-center" *ngIf="board.isShared == true" ><md-icon flex>share</md-icon></div>
+			  </a>
+			</div>
+		</md-dialog-content>
+	</div>
+</div>

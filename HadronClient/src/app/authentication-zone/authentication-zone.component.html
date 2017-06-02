@@ -1,0 +1,5 @@
+<div class="row align-items-center justify-content-center authentication-background">
+	<div class="col-2 align-items-center">
+			<facebook-login  *ngIf="!authenticated" (onAuthentication)="onAuthentication($event)"></facebook-login>
+	</div>
+</div>

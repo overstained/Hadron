@@ -1,0 +1,22 @@
+.container-height {
+	height:800px !important;
+}
+
+.sidenav-container {
+	height:100vh;
+	overflow-x: hidden !important; 
+	overflow-y: hidden !important; 
+	overflow: hidden !important; 
+}
+
+.toolbar-size {
+	width:75vw !important;
+}
+
+.sidenav-container md-sidenav {
+	max-width: 25% !important;
+}
+
+.marine {
+	color: blue;
+}

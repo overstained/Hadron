@@ -1,0 +1,54 @@
+<span (window:keydown.shift.b)="changeBoard()" 
+	 (window:keydown.alt.b)="newBoard()"
+	 (window:keydown.alt.t)="newTextDocument()"
+	 (window:keydown.shift.t)="changeTextDocument()"
+	 (window:keydown.control.q)="showRoadMap()"
+	 (window:keydown.shift.a)="openSideNav()"
+	 (window:keydown.alt.s)="shareBoard()"
+	 (window:keydown.shift.w)="whiteBoardOpen()" style="width:100vw; height: 100vh;">
+	<md-toolbar>
+		<div class="row" style="width: 100%;">
+			<div class="col-10">
+				<span>
+					Board:&nbsp;
+				</span>
+				<span *ngIf="showChangeBoardNameInput == false" (click)="showChangeBoardName()">
+					{{boardName}}
+				</span>
+				<span *ngIf="showChangeBoardNameInput == true">
+					<md-input-container class="example-full-width">
+						<input #boardNameInput [(ngModel)]="newBoardName" mdInput placeholder="New name" (keydown.Enter)="changeBoardName()" (blur)="hideBoardNameInput()" (focus)="focusedBoardNameInput()">
+					</md-input-container>
+				</span>
+				<span *ngFor="let user of roomUsers.getUsers()"><md-icon mdTooltip="{{user.email}}" [mdTooltipPosition]="'below'" [style.color] ="user.assignedUserColor">account_box</md-icon></span>
+			</div>
+			<div class="col-2">
+				<button md-button (click)="clearAndLogout()"><md-icon>exit_to_app</md-icon>Logout</button>
+			</div>
+		</div>
+	</md-toolbar>
+	<div class="row align-items-left">
+		<div class="col-12 align-items-center">
+			<span>
+				&nbsp; Text Document: &nbsp;
+			</span>
+			<span *ngIf="showChangeTextDocumentNameInput == false" (click)="showChangeTextDocumentName()">
+				{{textDocumentName}}
+			</span>
+			<span *ngIf="showChangeTextDocumentNameInput == true">
+				<md-input-container class="example-full-width">
+					<input #textDocumentNameInput [(ngModel)]="newTextDocumentName" mdInput placeholder="New name" (keydown.Enter)="changeTextDocumentName()" (blur)="hideTextDocumentNameInput()" (focus)="focusedTextDocumentNameInput()">
+				</md-input-container>
+			</span>
+			&nbsp;
+			<button md-raised-button color="primary" (click)="insertLastUploadedFile()">Insert last crop</button>
+			<button md-raised-button color="primary" (click)="openFileGallery()">View all crops</button>
+			<button md-raised-button color="primary" (click)="htmlToCanvas()">PDF</button>
+		</div>
+	</div>
+	<div class="row container-height">
+		<div class="col-12">
+			<quill-editor #quillElement (onEditorCreated)="setQuillEditor($event)" [modules]="quillModules"></quill-editor>
+		</div>
+	</div>
+</span>
