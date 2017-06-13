@@ -108,14 +108,12 @@ export class BoardZoneComponent {
       canvas.width = image.width;
       canvas.height = image.height;
       let ctx = canvas.getContext("2d");
-      console.log('setting origin');
       newImage.setAttribute('crossOrigin', 'Anonymous');
       newImage.setAttribute('src', image.src);
       newImage.onload = () => {
         ctx.drawImage(newImage, 0, 0);
         let dataURL = canvas.toDataURL("image/png");
         image.setAttribute('src', dataURL);
-        console.log(count);
         image.onload = () => {
           --count;
           if(count === 0) {
@@ -202,7 +200,6 @@ export class BoardZoneComponent {
               });
             }, error => {});
           }
-          console.log(result);
      });
    }
 
